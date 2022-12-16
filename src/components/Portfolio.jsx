@@ -1,4 +1,5 @@
-
+import { keyframes } from "@emotion/react";
+import { Reveal } from "react-awesome-reveal";
 
 import yugipedia from '../assets/portfolio/yugipedia.png';
 import puppeteer from '../assets/portfolio/puppeteer.png';
@@ -8,6 +9,17 @@ import sistem from '../assets/portfolio/sistem.jpg';
 
 const Portfolio = () => {
 
+    const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
     const portfolios = [
         {
@@ -41,8 +53,8 @@ const Portfolio = () => {
     ]
 
     return (
-        <div name="Projetos" className='bg-gradient-to-b flex from-black to-gray-900 w-full text-gray-200 h-auto'>
-            <div className='w-9/12 mx-auto mt-40 h-auto flex flex-col justify-center rounded-3xl bg-black'>
+        <div name="Projetos" className='bg-black w-full text-gray-200 h-auto'>
+            <div className='glass w-9/12 mx-auto mt-40 h-auto flex flex-col justify-center rounded-3xl'>
                 <div className='mt-4 mb-8 flex flex-col'>
                     <p className='text-4xl pt-12 mx-auto font-bold font-signature text-green-500'>
                         Projetos
@@ -56,14 +68,16 @@ const Portfolio = () => {
                     {
                         portfolios.map(({ id, src, name, code, hover }) => (
 
-                            <div key={id} className='group rounded-md p-2 shadow-md shadow-green-500 max-w-xs duration-200 hover:scale-105 mx-auto max-sm:w-10/12 flex flex-col'>
-                                <div className='shadow-md bg-gray-900 rounded-lg w-full flex flex-col'>
-                                    <p className='mx-auto my-2 text-1xl text-gray-400 cursor-default font-signature'>{name}</p>
-                                    <img src={src} alt="" className='rounded-md max-w-full max-h-full group-hover:opacity-10' />
-                                    <p className='opacity-0 scale-110 group-hover:scale-100 transition-all duration-200 ease-out group-hover:opacity-100 absolute mx-2 text-center text-gray-100 mt-20 max-sm:mt-16 max-w-[280px] cursor-default'>{hover}</p>
+                            <Reveal keyframes={customAnimation} key={id} className="mx-auto">
+                                <div className='group rounded-md p-2 glass border-2 border-gray-900 max-w-xs duration-200 hover:scale-105 max-sm:w-10/12 flex flex-col'>
+                                    <div className='shadow-md rounded-lg w-full flex flex-col'>
+                                        <p className='mx-auto my-2 text-1xl text-gray-400 cursor-default font-signature'>{name}</p>
+                                        <img src={src} alt="" className='rounded-md max-w-full max-h-full group-hover:opacity-10' />
+                                        <p className='opacity-0 scale-110 group-hover:scale-100 transition-all duration-200 ease-out group-hover:opacity-100 absolute mx-2 text-center text-gray-100 mt-20 max-sm:mt-16 max-w-[280px] cursor-default'>{hover}</p>
+                                    </div>
+                                    <button className='text-green-500 w-1/2 px-4 py-2 mt-2 mx-auto duration-200 hover:scale-105'><a href={code} target="_blank">Code</a></button>
                                 </div>
-                                <button className='text-green-500 w-1/2 px-4 py-2 mt-2 mx-auto duration-200 hover:scale-105'><a href={code} target="_blank">Code</a></button>
-                            </div>
+                            </Reveal>
 
                         ))
                     }

@@ -1,3 +1,5 @@
+import { Fade } from "react-awesome-reveal";
+
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
@@ -12,7 +14,7 @@ const SocialLinks = () => {
                     Linkedin <FaLinkedin size={30} />
                 </>
             ),
-            href: 'https://linkedin.com',
+            href: 'https://www.linkedin.com/in/valter-nunes-50aab4202/',
             style: 'rounded-tr-md'
         },
         {
@@ -47,7 +49,7 @@ const SocialLinks = () => {
     ]
 
     return (
-        <div className='hidden md:flex flex-col top-[35%] left-0 fixed'>
+        <Fade cascade={true} direction="up" className='hidden md:flex flex-col top-[35%] left-0 fixed'>
             <ul>
 
                 {links.map(({id, child, href, style, download}) => (
@@ -59,7 +61,7 @@ const SocialLinks = () => {
                 ))}
 
             </ul>
-        </div>
+        </Fade>
     )
 }
 
