@@ -3,10 +3,11 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { Link } from 'react-scroll';
 import { keyframes } from "@emotion/react";
 import { Reveal } from "react-awesome-reveal";
+import Typewriter from "typewriter-effect";
 
 const Home = () => {
 
-    const customAnimation = keyframes`
+    const animationHeader = keyframes`
   from {
     opacity: 0;
     transform: translateX(-200px);
@@ -18,16 +19,37 @@ const Home = () => {
   }
 `;
 
+    const animationImg = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
     return (
         <div name="Home" className="flex h-screen max-md:h-auto w-full bg-black">
 
-            <Reveal keyframes={customAnimation} className='w-10/12 m-auto'>
+            <Reveal keyframes={animationHeader} className='w-10/12 m-auto'>
                 <div className='w-full flex items-center mx-auto justify-between h-full px-4 max-lg:mt-24 max-md:flex-col'>
 
                     <div className='flex flex-col justify-center h-full'>
-                        <p className='text-gray-200 text-xl sm:text-3xl py-4'>
-                            Olá, meu nome é <span className='text-green-500 text-2xl sm:text-4xl'>Valter Nunes</span>
-                        </p>
+                        <div className='text-gray-200 text-xl sm:text-3xl py-4 flex items-center'>
+                            Olá, meu nome é&nbsp;<span className='text-green-500 text-xl sm:text-3xl lg:text-4xl'>
+                                <Typewriter
+                                    options={{
+                                        strings: ['Valter Nunes'],
+                                        autoStart: true,
+                                        loop: true,
+                                    }}
+                                />
+                            </span>
+
+                        </div>
                         <h2 className='text-4xl sm:text-6xl pb-4 max-md:w-full w-5/6 text-gray-200'>
                             Desenvolvedor web
                         </h2>
@@ -42,9 +64,9 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className='flex items-center max-sm:mt-16 h-3/6 z-10'>
+                    <Reveal keyframes={animationImg} className='flex items-center max-sm:mt-16 h-3/6 z-10'>
                         <img src={HeroImage} alt="my profile" className='rounded-2xl border-2 max-w-full max-lg:max-h-96 max-h-80 border-gray-800' />
-                    </div>
+                    </Reveal>
                 </div>
             </Reveal>
         </div>

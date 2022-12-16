@@ -1,5 +1,5 @@
 import { keyframes } from "@emotion/react";
-import { Reveal } from "react-awesome-reveal";
+import { AttentionSeeker } from "react-awesome-reveal";
 
 import html from "../assets/html.png";
 import css from "../assets/css.png";
@@ -12,18 +12,6 @@ import tailwind from "../assets/tailwind.png";
 import node from "../assets/node.png";
 
 const Experience = () => {
-
-  const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(200px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
 
   const techs = [
     {
@@ -99,13 +87,13 @@ const Experience = () => {
 
         <div className="flex flex-wrap w-10/12 mx-auto mb-40 gap-8 justify-between text-center">
           {techs.map(({ id, src, title, style }) => (
-            <Reveal keyframes={customAnimation} key={id} className="m-auto w-3/12 max-md:w-5/12 max-sm:w-10/12">
+            <AttentionSeeker effect="wobble" key={id} className="m-auto w-3/12 max-md:w-5/12 max-sm:w-10/12">
               <div className={`shadow-md hover:scale-105 duration-500 rounded-lg w-full mx-auto flex flex-col justify-end ${style}`}
               >
                 <img src={src} alt="" className="w-20 mx-auto" />
                 <p className="mt-4 font-signature">{title}</p>
               </div>
-            </Reveal>
+            </AttentionSeeker>
           ))}
         </div>
       </div>

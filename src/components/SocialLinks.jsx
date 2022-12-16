@@ -14,7 +14,7 @@ const SocialLinks = () => {
                     Linkedin <FaLinkedin size={30} />
                 </>
             ),
-            href: 'https://www.linkedin.com/in/valter-nunes-50aab4202/',
+            href: 'https://www.linkedin.com/in/valter-nunes',
             style: 'rounded-tr-md'
         },
         {
@@ -30,7 +30,7 @@ const SocialLinks = () => {
             id: 3,
             child: (
                 <>
-                    Mail <HiOutlineMail size={30} />
+                    Email <HiOutlineMail size={30} />
                 </>
             ),
             href: 'mailto:valternunes776@gmail.com'
@@ -39,7 +39,7 @@ const SocialLinks = () => {
             id: 4,
             child: (
                 <>
-                    Resume <BsFillPersonLinesFill size={30} />
+                    Resumo <BsFillPersonLinesFill size={30} />
                 </>
             ),
             href: '/resume.pdf',

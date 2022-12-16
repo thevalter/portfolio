@@ -1,5 +1,4 @@
-import { keyframes } from "@emotion/react";
-import { Reveal } from "react-awesome-reveal";
+import { AttentionSeeker } from "react-awesome-reveal";
 
 import yugipedia from '../assets/portfolio/yugipedia.png';
 import puppeteer from '../assets/portfolio/puppeteer.png';
@@ -8,18 +7,6 @@ import sistem from '../assets/portfolio/sistem.jpg';
 
 
 const Portfolio = () => {
-
-    const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(-200px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
 
     const portfolios = [
         {
@@ -68,7 +55,7 @@ const Portfolio = () => {
                     {
                         portfolios.map(({ id, src, name, code, hover }) => (
 
-                            <Reveal keyframes={customAnimation} key={id} className="mx-auto">
+                            <AttentionSeeker effect="swing" key={id} className="mx-auto">
                                 <div className='group rounded-md p-2 glass border-2 border-gray-900 max-w-xs duration-200 hover:scale-105 max-sm:w-10/12 flex flex-col'>
                                     <div className='shadow-md rounded-lg w-full flex flex-col'>
                                         <p className='mx-auto my-2 text-1xl text-gray-400 cursor-default font-signature'>{name}</p>
@@ -77,7 +64,7 @@ const Portfolio = () => {
                                     </div>
                                     <button className='text-green-500 w-1/2 px-4 py-2 mt-2 mx-auto duration-200 hover:scale-105'><a href={code} target="_blank">Code</a></button>
                                 </div>
-                            </Reveal>
+                            </AttentionSeeker>
 
                         ))
                     }
