@@ -65,7 +65,7 @@ const Home = () => {
                     </div>
 
                     <Reveal keyframes={animationImg} className='flex items-center max-sm:mt-16 h-3/6 z-10'>
-                        <img src={HeroImage} alt="my profile" className='rounded-2xl border-2 max-w-full max-lg:max-h-96 max-h-80 border-gray-800' />
+                        <img src={HeroImage} alt="my profile" className='rounded-2xl max-w-full max-lg:max-h-96 max-h-80' />
                     </Reveal>
                 </div>
             </Reveal>

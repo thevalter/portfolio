@@ -40,8 +40,8 @@ const Portfolio = () => {
     ]
 
     return (
-        <div name="Projetos" className='bg-black w-full text-gray-200 h-auto'>
-            <div className='glass w-9/12 mx-auto mt-40 h-auto flex flex-col justify-center rounded-3xl'>
+        <div name="Projetos" className='bg-black w-full pt-40 text-gray-200 h-auto'>
+            <div className='glass w-9/12 mx-auto h-auto flex flex-col justify-center rounded-3xl'>
                 <div className='mt-4 mb-8 flex flex-col'>
                     <p className='text-4xl pt-12 mx-auto font-bold font-signature text-green-500'>
                         Projetos
@@ -55,8 +55,8 @@ const Portfolio = () => {
                     {
                         portfolios.map(({ id, src, name, code, hover }) => (
 
-                            <AttentionSeeker effect="swing" key={id} className="mx-auto">
-                                <div className='group rounded-md p-2 glass border-2 border-gray-900 max-w-xs duration-200 hover:scale-105 max-sm:w-10/12 flex flex-col'>
+                            <AttentionSeeker effect="swing" key={id} className="m-auto">
+                                <div className='group rounded-md p-2 mx-auto glass border-2 border-gray-900 max-w-xs duration-200 hover:scale-105 max-sm:w-10/12 flex flex-col'>
                                     <div className='shadow-md rounded-lg w-full flex flex-col'>
                                         <p className='mx-auto my-2 text-1xl text-gray-400 cursor-default font-signature'>{name}</p>
                                         <img src={src} alt="" className='rounded-md max-w-full max-h-full group-hover:opacity-10' />
