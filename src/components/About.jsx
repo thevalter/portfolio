@@ -4,7 +4,7 @@ import { AttentionSeeker } from "react-awesome-reveal";
 const About = () => {
 
     return (
-        <div name="Sobre" className="flex w-full h-screen pt-40 max-sm:h-auto bg-black text-gray-300">
+        <div name="Sobre" className="flex w-full h-auto pt-40 max-sm:h-auto bg-black text-gray-300">
 
             <AttentionSeeker effect="headShake">
                 <div className="glass w-9/12 mx-auto pb-20 flex flex-col justify-center h-auto rounded-3xl">
